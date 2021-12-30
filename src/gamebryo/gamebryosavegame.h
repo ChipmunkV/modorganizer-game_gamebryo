@@ -10,6 +10,7 @@
 #include <QString>
 #include <QStringList>
 
+#include <memory>
 #include <stddef.h>
 #include <stdexcept>
 

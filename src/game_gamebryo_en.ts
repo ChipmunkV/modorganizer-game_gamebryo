@@ -141,23 +141,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gamebryo/gamebryosavegame.cpp" line="97"/>
+        <location filename="gamebryo/gamebryosavegame.cpp" line="98"/>
         <source>failed to open %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gamebryo/gamebryosavegame.cpp" line="107"/>
+        <location filename="gamebryo/gamebryosavegame.cpp" line="108"/>
         <source>wrong file format - expected %1 got %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="gamebryo/gamegamebryo.cpp" line="323"/>
-        <source>failed to query registry path (preflight): %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="gamebryo/gamegamebryo.cpp" line="330"/>
-        <source>failed to query registry path (read): %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

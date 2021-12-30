@@ -19,8 +19,8 @@ along with Mod Organizer.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "dummybsa.h"
 #include <QFile>
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
+//#define WIN32_LEAN_AND_MEAN
+//#include <Windows.h>
 
 
 static void writeUlong(unsigned char* buffer, int offset, unsigned long value)
@@ -55,54 +55,56 @@ static unsigned long genHashInt(const unsigned char *pos, const unsigned char *e
 
 static unsigned long long genHash(const char* fileName)
 {
-  char fileNameLower[MAX_PATH + 1];
-  int i = 0;
-  for (; i < MAX_PATH && fileName[i] != '\0'; ++i) {
-    fileNameLower[i] = static_cast<char>(tolower(fileName[i]));
-    if (fileNameLower[i] == '\\') {
-      fileNameLower[i] = '/';
-    }
-  }
-  fileNameLower[i] = '\0';
-
-  unsigned char *fileNameLowerU = reinterpret_cast<unsigned char*>(fileNameLower);
-
-  char* ext = strrchr(fileNameLower, '.');
-  if (ext == nullptr) {
-    ext = fileNameLower + strlen(fileNameLower);
-  }
-  unsigned char *extU = reinterpret_cast<unsigned char*>(ext);
-
-  int length = ext - fileNameLower;
-
-  unsigned long long hash = 0ULL;
-
-  if (length > 0) {
-    hash = *(extU - 1) |
-           ((length > 2 ? *(ext - 2) : 0) << 8) |
-           (length << 16) |
-           (fileNameLowerU[0] << 24);
-  }
-
-  if (strlen(ext) > 0) {
-    if (strcmp(ext + 1, "kf") == 0) {
-      hash |= 0x80;
-    } else if (strcmp(ext + 1, "nif") == 0) {
-      hash |= 0x8000;
-    } else if (strcmp(ext + 1, "dds") == 0) {
-      hash |= 0x8080;
-    } else if (strcmp(ext + 1, "wav") == 0) {
-      hash |= 0x80000000;
-    }
-
-    unsigned long long temp = static_cast<unsigned long long>(genHashInt(
-                fileNameLowerU + 1, extU - 2));
-    temp += static_cast<unsigned long long>(genHashInt(
-                extU, extU + strlen(ext)));
-
-    hash |= (temp & 0xFFFFFFFF) << 32;
-  }
-  return hash;
+//  char fileNameLower[MAX_PATH + 1];
+//  int i = 0;
+//  for (; i < MAX_PATH && fileName[i] != '\0'; ++i) {
+//    fileNameLower[i] = static_cast<char>(tolower(fileName[i]));
+//    if (fileNameLower[i] == '\\') {
+//      fileNameLower[i] = '/';
+//    }
+//  }
+//  fileNameLower[i] = '\0';
+//
+//  unsigned char *fileNameLowerU = reinterpret_cast<unsigned char*>(fileNameLower);
+//
+//  char* ext = strrchr(fileNameLower, '.');
+//  if (ext == nullptr) {
+//    ext = fileNameLower + strlen(fileNameLower);
+//  }
+//  unsigned char *extU = reinterpret_cast<unsigned char*>(ext);
+//
+//  int length = ext - fileNameLower;
+//
+//  unsigned long long hash = 0ULL;
+//
+//  if (length > 0) {
+//    hash = *(extU - 1) |
+//           ((length > 2 ? *(ext - 2) : 0) << 8) |
+//           (length << 16) |
+//           (fileNameLowerU[0] << 24);
+//  }
+//
+//  if (strlen(ext) > 0) {
+//    if (strcmp(ext + 1, "kf") == 0) {
+//      hash |= 0x80;
+//    } else if (strcmp(ext + 1, "nif") == 0) {
+//      hash |= 0x8000;
+//    } else if (strcmp(ext + 1, "dds") == 0) {
+//      hash |= 0x8080;
+//    } else if (strcmp(ext + 1, "wav") == 0) {
+//      hash |= 0x80000000;
+//    }
+//
+//    unsigned long long temp = static_cast<unsigned long long>(genHashInt(
+//                fileNameLowerU + 1, extU - 2));
+//    temp += static_cast<unsigned long long>(genHashInt(
+//                extU, extU + strlen(ext)));
+//
+//    hash |= (temp & 0xFFFFFFFF) << 32;
+//  }
+//  return hash;
+  assert(false && "Not implemented");
+  return 0;
 }
 
 DummyBSA::DummyBSA(unsigned long bsaVersion)

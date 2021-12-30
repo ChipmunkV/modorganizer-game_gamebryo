@@ -10,7 +10,7 @@
 #include <QScopedArrayPointer>
 #include <QTime>
 
-#include <Windows.h>
+//#include <Windows.h>
 #include <lz4.h>
 
 #include <stdexcept>
@@ -80,12 +80,13 @@ bool GamebryoSaveGame::hasScriptExtenderFile() const
 
 void GamebryoSaveGame::setCreationTime(_SYSTEMTIME const &ctime)
 {
-  QDate date;
-  date.setDate(ctime.wYear, ctime.wMonth, ctime.wDay);
-  QTime time;
-  time.setHMS(ctime.wHour, ctime.wMinute, ctime.wSecond, ctime.wMilliseconds);
-
-  m_CreationTime = QDateTime(date, time, Qt::UTC);
+//  QDate date;
+//  date.setDate(ctime.wYear, ctime.wMonth, ctime.wDay);
+//  QTime time;
+//  time.setHMS(ctime.wHour, ctime.wMinute, ctime.wSecond, ctime.wMilliseconds);
+//
+//  m_CreationTime = QDateTime(date, time, Qt::UTC);
+  assert(false && "Not implemented");
 }
 
 GamebryoSaveGame::FileWrapper::FileWrapper(QString const& filepath, QString const &expected) :

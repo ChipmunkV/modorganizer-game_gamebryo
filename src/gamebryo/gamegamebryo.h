@@ -18,8 +18,14 @@ class UnmanagedMods;
 #include <iplugingame.h>
 #include <ipluginfilemapper.h>
 #include <memory>
-#include <ShlObj.h>
-#include <dbghelp.h>
+//#include <ShlObj.h>
+//#include <dbghelp.h>
+
+using HKEY = void*;
+using WORD = uint16_t;
+using DWORD = uint32_t;
+using BYTE = unsigned char;
+using LPCWSTR = wchar_t const *;
 
 #include "gamebryosavegame.h"
 
@@ -124,7 +130,7 @@ protected:
 
   static QString findInRegistry(HKEY baseKey, LPCWSTR path, LPCWSTR value);
 
-  static QString getKnownFolderPath(REFKNOWNFOLDERID folderId, bool useDefault);
+//  static QString getKnownFolderPath(REFKNOWNFOLDERID folderId, bool useDefault);
 
   static QString getSpecialPath(const QString &name);
 
