@@ -1,5 +1,6 @@
 #include "gamebryobsainvalidation.h"
 
+#include <iostream> // UNUSED
 #include "dummybsa.h"
 #include "iplugingame.h"
 #include "iprofile.h"
@@ -125,6 +126,6 @@ bool GamebryoBSAInvalidation::prepareProfile(MOBase::IProfile *profile)
 //  }
 //
 //  return dirty;
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: prepareProfile" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
   return false;
 }

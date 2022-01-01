@@ -1,4 +1,5 @@
 #include "gamebryodataarchives.h"
+#include <iostream> // UNUSED
 #include "registry.h"
 //#include <Windows.h>
 #include <utility.h>
@@ -28,7 +29,7 @@ QStringList GamebryoDataArchives::getArchivesFromKey(const QString &iniFile, con
 //  }
 //  delete[] buffer;
 //  return result;
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: getArchivesFromKey" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
   return QStringList();
 }
 

@@ -1,5 +1,6 @@
 #include "gamegamebryo.h"
 
+#include <iostream> // UNUSED
 #include "bsainvalidation.h"
 #include "dataarchives.h"
 #include "gamebryomoddatacontent.h"
@@ -219,7 +220,7 @@ QString GameGamebryo::identifyGamePath() const
 {
 //  QString path = "Software\\Bethesda Softworks\\" + gameShortName();
 //  return findInRegistry(HKEY_LOCAL_MACHINE, path.toStdWString().c_str(), L"Installed Path");
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: identifyGamePath" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
   return "";
 }
 
@@ -261,7 +262,7 @@ QString GameGamebryo::myGamesPath() const
 /*static*/ QString GameGamebryo::getLootPath()
 {
 //  return findInRegistry(HKEY_LOCAL_MACHINE, L"Software\\LOOT", L"Installed Path") + "/Loot.exe";
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: getLootPath" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
   return "";
 }
 
@@ -278,7 +279,7 @@ QString GameGamebryo::localAppFolder()
 //    result = getSpecialPath("Local AppData");
 //  }
 //  return result;
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: localAppFolder" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
   return "";
 }
 
@@ -421,6 +422,6 @@ QString GameGamebryo::determineMyGamesPath(const QString &gameName)
 //  }
 //
 //  return {};
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: determineMyGamesPath" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
   return "";
 }
