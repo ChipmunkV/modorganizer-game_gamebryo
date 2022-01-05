@@ -207,7 +207,7 @@ WORD GameGamebryo::getArch(QString const &program) const
 //	if (hMapping != INVALID_HANDLE_VALUE)
 //		CloseHandle(hMapping);
 //	return arch;
-   assert(false && "Not implemented");
+   std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
 	return 0;
 }
 
@@ -245,7 +245,7 @@ bool GameGamebryo::prepareIni(const QString& exec)
 //  }
 //
 //  return true;
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
   return false;
 }
 
@@ -312,7 +312,7 @@ MappingType GameGamebryo::mappings() const
 //                       localAppFolder() + "/" + gameShortName() + "/" + profileFile,
 //                       false });
 //  }
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
 
   return result;
 }
@@ -343,7 +343,7 @@ std::unique_ptr<BYTE[]> GameGamebryo::getRegValue(HKEY key, LPCWSTR path, LPCWST
 //  }
 //
 //  return result;
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
   return std::unique_ptr<BYTE[]>();
 }
 
@@ -352,7 +352,7 @@ QString GameGamebryo::findInRegistry(HKEY baseKey, LPCWSTR path, LPCWSTR value)
 //  std::unique_ptr<BYTE[]> buffer = getRegValue(baseKey, path, value, RRF_RT_REG_SZ | RRF_NOEXPAND);
 //
 //  return QString::fromUtf16(reinterpret_cast<const ushort*>(buffer.get()));
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
   return "";
 }
 
@@ -384,7 +384,7 @@ QString GameGamebryo::getSpecialPath(const QString &name)
 //  else {
 //    return base;
 //  }
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
   return "";
 }
 

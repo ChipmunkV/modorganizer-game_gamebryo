@@ -136,17 +136,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gamebryo/gamebryosavegame.cpp" line="47"/>
+        <location filename="gamebryo/gamebryosavegame.cpp" line="48"/>
         <source>%1, #%2, Level %3, %4</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gamebryo/gamebryosavegame.cpp" line="98"/>
+        <location filename="gamebryo/gamebryosavegame.cpp" line="99"/>
         <source>failed to open %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="gamebryo/gamebryosavegame.cpp" line="108"/>
+        <location filename="gamebryo/gamebryosavegame.cpp" line="109"/>
         <source>wrong file format - expected %1 got %2</source>
         <translation type="unfinished"></translation>
     </message>

@@ -24,6 +24,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 //#include <windows.h>
 #include <stddef.h>
 #include <string>
+#include <iostream> // UNUSED
 
 
 static const QString LocalSavesDummy = "__MO_Saves\\";
@@ -119,6 +120,6 @@ bool GamebryoLocalSavegames::prepareProfile(MOBase::IProfile* profile)
 //  }
 //
 //  return enable != alreadyEnabled;
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
   return false;
 }

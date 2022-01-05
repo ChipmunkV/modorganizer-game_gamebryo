@@ -13,6 +13,7 @@
 //#include <Windows.h>
 #include <lz4.h>
 
+#include <iostream> // UNUSED
 #include <stdexcept>
 #include <vector>
 
@@ -86,7 +87,7 @@ void GamebryoSaveGame::setCreationTime(_SYSTEMTIME const &ctime)
 //  time.setHMS(ctime.wHour, ctime.wMinute, ctime.wSecond, ctime.wMilliseconds);
 //
 //  m_CreationTime = QDateTime(date, time, Qt::UTC);
-  assert(false && "Not implemented");
+  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
 }
 
 GamebryoSaveGame::FileWrapper::FileWrapper(QString const& filepath, QString const &expected) :
