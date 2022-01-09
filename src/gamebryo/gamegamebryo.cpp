@@ -226,27 +226,30 @@ QString GameGamebryo::identifyGamePath() const
 
 bool GameGamebryo::prepareIni(const QString& exec)
 {
-//  MOBase::IProfile *profile = m_Organizer->profile();
-//
-//  QString basePath
-//      = profile->localSettingsEnabled()
-//            ? profile->absolutePath()
-//            : documentsDirectory().absolutePath();
-//
-//  if (!iniFiles().isEmpty()) {
-//
-//    QString profileIni = basePath + "/" + iniFiles()[0];
-//
-//    WCHAR setting[512];
-//    if (!GetPrivateProfileStringW(L"Launcher", L"bEnableFileSelection", L"0", setting, 512, profileIni.toStdWString().c_str())
-//      || wcstol(setting, nullptr, 10) != 1) {
-//      MOBase::WriteRegistryValue(L"Launcher", L"bEnableFileSelection", L"1", profileIni.toStdWString().c_str());
-//    }
-//  }
-//
-//  return true;
-  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
-  return false;
+#ifdef _WIN32
+  MOBase::IProfile *profile = m_Organizer->profile();
+
+  QString basePath
+      = profile->localSettingsEnabled()
+            ? profile->absolutePath()
+            : documentsDirectory().absolutePath();
+
+  if (!iniFiles().isEmpty()) {
+
+    QString profileIni = basePath + "/" + iniFiles()[0];
+
+    WCHAR setting[512];
+    if (!GetPrivateProfileStringW(L"Launcher", L"bEnableFileSelection", L"0", setting, 512, profileIni.toStdWString().c_str())
+      || wcstol(setting, nullptr, 10) != 1) {
+      MOBase::WriteRegistryValue(L"Launcher", L"bEnableFileSelection", L"1", profileIni.toStdWString().c_str());
+    }
+  }
+
+  return true;
+#else
+  std::cerr << "FIXME: Not implemented GameGamebryo::prepareIni" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
+  return true;
+#endif
 }
 
 QString GameGamebryo::selectedVariant() const
@@ -273,14 +276,17 @@ std::map<std::type_index, std::any> GameGamebryo::featureList() const
 
 QString GameGamebryo::localAppFolder()
 {
+#ifdef _WIN32
 //  QString result = getKnownFolderPath(FOLDERID_LocalAppData, false);
 //  if (result.isEmpty()) {
 //    // fallback: try the registry
 //    result = getSpecialPath("Local AppData");
 //  }
 //  return result;
-  std::cerr << "FIXME: localAppFolder" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
-  return "";
+#else
+  std::cerr << "FIXME: Not Implemented localAppFolder of the wine prefix" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n";
+  return "~/mod-managing/workspace/modorganizer2/Debug/src/AppData";
+#endif
 }
 
 void GameGamebryo::copyToProfile(QString const &sourcePath,
@@ -307,12 +313,11 @@ MappingType GameGamebryo::mappings() const
 {
   MappingType result;
 
-//  for (const QString &profileFile : { "plugins.txt", "loadorder.txt" }) {
-//    result.push_back({ m_Organizer->profilePath() + "/" + profileFile,
-//                       localAppFolder() + "/" + gameShortName() + "/" + profileFile,
-//                       false });
-//  }
-  std::cerr << "FIXME: Not implemented" + std::string(" \e]8;;eclsrc://") + __FILE__ + ":" + std::to_string(__LINE__) + "\a" + __FILE__ + ":" + std::to_string(__LINE__) + "\e]8;;\a\n"; assert(false && "Not implemented");
+  for (const QString &profileFile : { "plugins.txt", "loadorder.txt" }) {
+    result.push_back({ m_Organizer->profilePath() + "/" + profileFile,
+                       localAppFolder() + "/" + gameShortName() + "/" + profileFile,
+                       false });
+  }
 
   return result;
 }
